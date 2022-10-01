@@ -1,6 +1,7 @@
 {
   "name": "functions",
   "scripts": {
+    "local": "firebase use default && firebase emulators:start --import=./localdb --export-on-exit=./localdb && tsc -w",
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
     "build:watch": "tsc --watch",

@@ -1,0 +1,17 @@
+{
+    "name": "middlewareroot",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "build:qa": "yarn --cwd ./functions build:qa",
+        "deploy:qa": "yarn --cwd ./functions deploy:qa",
+        "build:dev": "yarn --cwd ./functions build:dev",
+        "deploy:dev": "yarn --cwd ./functions deploy:dev",
+        "build:prod": "yarn --cwd ./functions build:prod",
+        "deploy:prod": "yarn --cwd ./functions deploy:prod",
+        "local": "yarn --cwd ./functions run local"
+    },
+    "dependencies": {
+        "turbo": "^1.2.16"
+    }
+}

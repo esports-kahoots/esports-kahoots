@@ -3,6 +3,26 @@ import { useColorModeValue, useTheme } from 'native-base';
 export const useCustomTheme = () => {
     const { colors } = useTheme();
 
+    const primary = useColorModeValue(
+        colors.primary.light,
+        colors.primary.dark
+    );
+
+    const primaryAccent = useColorModeValue(
+        colors.primaryAccent.light,
+        colors.primaryAccent.dark
+    );
+
+    const secondary = useColorModeValue(
+        colors.secondary.light,
+        colors.secondary.dark
+    );
+
+    const secondaryAccent = useColorModeValue(
+        colors.secondaryAccent.light,
+        colors.secondaryAccent.dark
+    );
+
     // // Text
     const textColor = useColorModeValue(
         colors.text.primary.light,
@@ -86,6 +106,10 @@ export const useCustomTheme = () => {
     const transitionSpeedLayout = 250;
 
     return {
+        primary,
+        primaryAccent,
+        secondary,
+        secondaryAccent,
         textColor,
         textColorSecondary,
         textColorLight,

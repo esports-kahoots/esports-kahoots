@@ -85,7 +85,7 @@ const customTheme = extendTheme({
             light: '#606C38',
             dark: '#606C38',
         },
-        secondaryHover: {
+        secondaryAccent: {
             light: '#283618',
             dark: '#283618',
         },

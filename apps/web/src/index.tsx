@@ -125,7 +125,6 @@ ReactDOM.render(
         >
             <App />
         </NativeBaseProvider>
-        ,
     </React.StrictMode>,
     document.getElementById('root')
 );

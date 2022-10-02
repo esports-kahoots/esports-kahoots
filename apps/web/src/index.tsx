@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
 
 const customTheme = extendTheme({
     config: {
@@ -125,7 +126,6 @@ ReactDOM.render(
         >
             <App />
         </NativeBaseProvider>
-        ,
     </React.StrictMode>,
     document.getElementById('root')
 );

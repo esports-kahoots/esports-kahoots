@@ -1,5 +1,7 @@
 {
   "name": "functions",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
     "local": "firebase use default && firebase emulators:start --import=./localdb --export-on-exit=./localdb && tsc -w",
     "lint": "eslint --ext .js,.ts .",

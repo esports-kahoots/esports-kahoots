@@ -15,7 +15,7 @@ function App() {
                 <Route path="/" element={<Login />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
-                <Route path="/codescreen" element={<CodeScreen />} />
+                <Route path="/codescreen" element={<CodeScreen code={"ABCDEF"} />} />
             </Routes>
         </Router>
     );

@@ -1,79 +1,21 @@
-import logo from './logo.svg';
-import {
-    Box,
-    Image,
-    Text,
-    Link,
-    HStack,
-    Heading,
-    Switch,
-    useColorMode,
-    VStack,
-} from 'native-base';
+import isElectron from 'is-electron';
+import { useColorMode } from 'native-base';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import Login from './Screens/Login/Login';
+import Profile from './Screens/Profile/Profile';
 
 function App() {
     const { colorMode } = useColorMode();
 
+    const Router = isElectron() ? HashRouter : BrowserRouter;
     return (
-        <Box
-            bg={colorMode === 'light' ? 'coolGray.50' : 'coolGray.900'}
-            minHeight="100vh"
-            justifyContent="center"
-            px={4}
-        >
-            <VStack space={5} alignItems="center">
-                <Image
-                    source={{ uri: logo }}
-                    resizeMode="contain"
-                    size={220}
-                    alt="NativeBase logo"
-                />
-                <Heading size="lg">Welcome to NativeBase</Heading>
-                <Text>
-                    Edit{' '}
-                    <Box
-                        _text={{
-                            fontFamily: 'monospace',
-                            fontSize: 'sm',
-                        }}
-                        px={2}
-                        py={1}
-                        _dark={{ bg: 'blueGray.800' }}
-                        _light={{ bg: 'blueGray.200' }}
-                    >
-                        src/pages/index.js
-                    </Box>{' '}
-                    and save to reload.
-                </Text>
-                <Link href="https://docs.nativebase.io" isExternal>
-                    <Text color="primary.500" underline fontSize={'xl'}>
-                        Learn NativeBase
-                    </Text>
-                </Link>
-                <ToggleDarkMode />
-                <Login />
-            </VStack>
-        </Box>
-    );
-}
-
-function ToggleDarkMode() {
-    const { colorMode, toggleColorMode } = useColorMode();
-    return (
-        <HStack space={2}>
-            <Text>Dark</Text>
-            <Switch
-                isChecked={colorMode === 'light'}
-                onToggle={toggleColorMode}
-                aria-label={
-                    colorMode === 'light'
-                        ? 'switch to dark mode'
-                        : 'switch to light mode'
-                }
-            />
-            <Text>Light</Text>
-        </HStack>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
+            </Routes>
+        </Router>
     );
 }
 

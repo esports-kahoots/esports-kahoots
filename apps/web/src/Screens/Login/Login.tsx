@@ -32,11 +32,12 @@ const Login = (props: LoginProps) => {
                     flexDir="row"
                     alignItems="center"
                     height="100%"
-                    width="100%"
+                    width="90%"
                 >
                     <VStack alignItems="center" width="100%">
                         <Button
                             width="100%"
+                            marginBottom="1em"
                             leftIcon={<GoogleIcon />}
                             backgroundColor={primary}
                             _hover={{

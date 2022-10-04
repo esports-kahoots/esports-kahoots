@@ -1,5 +1,6 @@
 import create from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
+import { userStore } from './userStore';
 
 export type FetchReturn = {
     status: number;
@@ -12,11 +13,11 @@ export type IStoreSchema = {};
 export const useUserStore = create(
     devtools(
         persist(userStore, {
-            name: 'UserStore',
+            name: '',
             getStorage: () => localStorage,
         }),
         {
-            name: 'UserStore',
+            name: '',
         }
     )
 );

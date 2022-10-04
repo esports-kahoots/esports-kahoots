@@ -3,6 +3,7 @@ import GoogleIcon from '../../Assets/Icons/GoogleIcon';
 import { HorizontalDivider } from '../../Components/Themed/Grid';
 import { TText } from '../../Components/Themed/Text';
 import { useCustomTheme } from '../../useCustomTheme';
+import { useAuth } from '../../Hooks/useAuth';
 
 type LoginProps = {};
 
@@ -15,6 +16,8 @@ const Login = (props: LoginProps) => {
         secondary,
         secondaryAccent,
     } = useCustomTheme();
+
+    const { signInGoogle } = useAuth();
 
     return (
         <div
@@ -43,6 +46,7 @@ const Login = (props: LoginProps) => {
                             _hover={{
                                 backgroundColor: primaryAccent,
                             }}
+                            onPress = { signInGoogle }
                         >
                             <TText
                                 style={{
@@ -51,7 +55,7 @@ const Login = (props: LoginProps) => {
                                     color: backgroundColor,
                                 }}
                             >
-                                Continue As Guest
+                                Continue With Google
                             </TText>
                         </Button>
 

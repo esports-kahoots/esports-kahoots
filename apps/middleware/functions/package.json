@@ -2,6 +2,7 @@
     "name": "functions",
     "version": "0.0.1",
     "private": true,
+    "module": "es2022",
     "scripts": {
         "local": "firebase use default && firebase emulators:start --import=./localdb --export-on-exit=./localdb && tsc -w",
         "lint": "prettier --check src/**/*",

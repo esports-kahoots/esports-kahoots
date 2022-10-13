@@ -4,7 +4,7 @@ import * as express from 'express';
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
 
-export let app: express.Express;
+export let APP: express.Express;
 export let webApi: any;
 
 const projectConfig = {
@@ -17,24 +17,25 @@ admin.initializeApp(projectConfig);
 
 try {
     //initialize express server
-    app = express();
+    APP = express();
     const main = express();
 
     //add the path to receive request and set json as bodyParser to process the body
-    main.use('/api/v1', app);
+    main.use('/api/v1', APP);
     main.use(bodyParser.json());
     main.use(bodyParser.urlencoded({ extended: false }));
 
     //define google cloud function name
     webApi = functions.https.onRequest(main);
 
-    app.get('/', async (req, res) => {
+    APP.get('/', async (req, res) => {
         res.status(200).send('HELLO FROM FIREBASE');
     });
 } catch (e) {
     console.error('!!', e);
 }
 
-export const fs = admin.firestore();
+export const FS = admin.firestore();
 
-export * from './testapi';
+export * from './user/UserRequest';
+// export * from './testapi';
